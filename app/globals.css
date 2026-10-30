@@ -1,0 +1,149 @@
+@import "tailwindcss";
+
+:root {
+    --zoro-black: #050706;
+    --zoro-surface: #0a0f0c;
+    --zoro-surface-2: #101712;
+    --zoro-surface-3: #151c17;
+
+    --zoro-green: #19d47b;
+    --zoro-green-bright: #39f59a;
+    --zoro-green-dark: #0d7045;
+
+    --zoro-text: #f4f7f5;
+    --zoro-text-soft: #c2cbc5;
+    --zoro-muted: #7f8c84;
+
+    --zoro-border: rgba(255, 255, 255, 0.08);
+    --zoro-border-green: rgba(25, 212, 123, 0.22);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at 80% 10%,
+            rgba(25, 212, 123, 0.09),
+            transparent 28%),
+        radial-gradient(circle at 10% 85%,
+            rgba(25, 212, 123, 0.06),
+            transparent 28%),
+        var(--zoro-black);
+    color: var(--zoro-text);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+::selection {
+    background: rgba(25, 212, 123, 0.25);
+    color: #ffffff;
+}
+
+.zoro-grid {
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.025) 1px,
+            transparent 1px),
+        linear-gradient(90deg,
+            rgba(255, 255, 255, 0.025) 1px,
+            transparent 1px);
+    background-size: 42px 42px;
+}
+
+.zoro-glow {
+    box-shadow:
+        0 0 80px rgba(25, 212, 123, 0.07),
+        inset 0 1px 0 rgba(255, 255, 255, 0.03);
+}
+
+.zoro-card {
+    border: 1px solid var(--zoro-border);
+    background: rgba(10, 15, 12, 0.86);
+    backdrop-filter: blur(18px);
+}
+
+.zoro-green-border {
+    border: 1px solid var(--zoro-border-green);
+}
+
+.zoro-gradient-text {
+    background: linear-gradient(90deg,
+            #ffffff 0%,
+            #c8ffe2 45%,
+            #19d47b 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.zoro-button {
+    transition:
+        transform 180ms ease,
+        box-shadow 180ms ease,
+        background-color 180ms ease;
+}
+
+.zoro-button:hover {
+    transform: translateY(-1px);
+    box-shadow:
+        0 12px 35px rgba(25, 212, 123, 0.16);
+}
+
+.zoro-button:active {
+    transform: translateY(0);
+}
+
+.zoro-input {
+    transition:
+        border-color 180ms ease,
+        box-shadow 180ms ease,
+        background-color 180ms ease;
+}
+
+.zoro-input:focus {
+    outline: none;
+    border-color: rgba(25, 212, 123, 0.65);
+    background-color: rgba(255, 255, 255, 0.045);
+    box-shadow:
+        0 0 0 4px rgba(25, 212, 123, 0.08);
+}
+
+/* Zoro custom scrollbar */
+.zoro-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.12) transparent;
+}
+
+.zoro-scrollbar::-webkit-scrollbar {
+    width: 5px;
+}
+
+.zoro-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.zoro-scrollbar::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.10);
+    border-radius: 999px;
+}
+
+.zoro-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: rgba(25, 212, 123, 0.45);
+}
